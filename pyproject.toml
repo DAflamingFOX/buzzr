@@ -1,0 +1,36 @@
+[project]
+name = "buzzr"
+version = "0.0.1"
+description = "FRC match clipper."
+readme = "README.md"
+authors = [
+    { name = "Jeffrey Morris", email = "jeff@jeff-m.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pyqt6>=6.11.0",
+]
+
+[project.scripts]
+buzzr = "buzzr.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.20,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pyright]
+typeCheckingMode = "basic"
+include = ["src"]
